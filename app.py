@@ -1,7 +1,9 @@
+import os
 import time
 import streamlit as st
 from openai import OpenAI
-client = OpenAI(api_key="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",base_url="https://openrouter.ai/api/v1")
+api_key = os.getenv("API_KEY")
+client = OpenAI(api_key=api_key,base_url="https://openrouter.ai/api/v1")
 st.title("DevSenseAI")
 
 if "chats" not in st.session_state:
